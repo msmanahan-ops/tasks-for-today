@@ -16,6 +16,7 @@ class Pages extends BaseController
             'today' => $today,
             'tasks' => $taskModel
                 ->where('task_date', $today)
+                ->where('is_archived', 0)
                 ->orderBy('id', 'ASC')
                 ->findAll(),
         ]);
